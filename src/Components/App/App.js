@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
+import Loader from '../Loader/Loader';
 import getEventInfo from '../../apiCalls';
 import './App.css';
 
@@ -11,7 +12,7 @@ class App extends Component {
     super()
     this.state = {
       allData: [],
-      renderData: []
+      favData: []
     }
   }
 
@@ -22,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     getEventInfo('').then(data => {
       console.log(data)
-      this.setState({allData: data, renderData: data})
+      this.setState({allData: data})
     })
   }
 
@@ -30,10 +31,10 @@ class App extends Component {
     return (
       <>
         <Header />
-        <Switch>
+        {this.state.allData.length ? <Switch>
           <Route exact path="/"
             render={() => (
-              <EventGrid data={this.state.renderData} />
+              <EventGrid data={this.state.allData} />
             )}
           />
           <Route exact path="/favorites"
@@ -51,7 +52,7 @@ class App extends Component {
               <h2>Error View</h2>
             )}
           />
-        </Switch>
+        </Switch> : <Loader />}
       </>
     )
   }
