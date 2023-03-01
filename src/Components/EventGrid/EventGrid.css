@@ -1,0 +1,9 @@
+.eventGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 30px 2%;
+  padding: 2%;
+  background: lightgreen;
+}
