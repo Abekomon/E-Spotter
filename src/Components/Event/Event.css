@@ -1,5 +1,12 @@
 .eventCard {
   width: 31%;
-  height: 250px;
+  height: 300px;
   background: lightslategray;
+  text-align: center;
+  padding: 2%;
+}
+
+.leagueLogo {
+  height: 45%;
+  max-width: 70%;
 }
