@@ -6,7 +6,7 @@ export default function EventInfo({event}) {
     <div className="infoContainer">
       <h2>{event.serie.full_name}</h2>
       <h3>{event.videogame.name}</h3>
-      <p>{event.being_at}</p>
+      <p>{event.begin_at}</p>
     </div>
   )
 }
