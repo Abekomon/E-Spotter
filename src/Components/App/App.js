@@ -31,10 +31,12 @@ class App extends Component {
     return (
       <>
         <Header />
-        {this.state.allData.length ? <Switch>
+        <Switch>
           <Route exact path="/"
             render={() => (
-              <EventGrid data={this.state.allData} />
+              this.state.allData.length 
+              ? <EventGrid data={this.state.allData} />
+              : <Loader />
             )}
           />
           <Route exact path="/favorites"
@@ -52,7 +54,7 @@ class App extends Component {
               <h2>Error View</h2>
             )}
           />
-        </Switch> : <Loader />}
+        </Switch>
       </>
     )
   }
