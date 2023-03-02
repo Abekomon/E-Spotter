@@ -4,6 +4,11 @@
 
 a {
   display: block;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 html, body, #root {
