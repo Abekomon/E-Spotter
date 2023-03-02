@@ -5,7 +5,7 @@ import csgoLogo from "../../Assets/csgo-logo.svg"
 import valLogo from "../../Assets/val-logo.svg"
 import lolLogo from "../../Assets/lol-logo.svg"
 
-export default function Event({eventData}) {
+export default function Event({eventData, addToFavorites}) {
   let imagePath = eventData.league.image_url
   if(eventData.videogame.name === "Valorant" && !imagePath) {
     imagePath = valLogo
@@ -18,6 +18,8 @@ export default function Event({eventData}) {
   return (
     <Link to={`/event/${eventData.id}`} className="eventLink" >
       <div className="eventCard">
+        <button className="card-fav-button" onClick={() => {addToFavorites(eventData.id)}}>
+          Favorite</button>
         <img className="leagueLogo" src={imagePath} />
         <h2>{eventData.videogame.name}</h2>
         <h3>{eventData.league.name}</h3>

@@ -42,7 +42,7 @@ class App extends Component {
           <Route exact path="/"
             render={() => (
               this.state.allData.length 
-              ? <EventGrid data={this.state.allData} />
+              ? <EventGrid data={this.state.allData} addToFavorites={this.addToFavorites}/>
               : <Loader />
             )}
           />
