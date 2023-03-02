@@ -1,0 +1,23 @@
+.infoContainer {
+  background-color: lightsteelblue;
+  width: 75%;
+  margin: auto;
+  padding: 2%;
+}
+
+.infoHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoBox {
+  padding-left: 3%;
+}
+
+.info-home-link, .info-home-link:visited {
+  color: black;
+}
+
+.info-home-link:hover {
+  color: red;
+}
