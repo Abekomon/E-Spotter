@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
@@ -20,6 +20,13 @@ class App extends Component {
     return this.state.allData.find(eve => eve.id === id)
   }
 
+  addToFavorites = (id) => {
+    const findEvent = this.state.allData.find(eve => eve.id === id)
+    if (!this.state.favData.includes(findEvent)){
+      this.setState({favData: [...this.state.favData, findEvent]})
+    }
+  }
+
   componentDidMount() {
     getEventInfo('').then(data => {
       console.log(data)
@@ -34,19 +41,22 @@ class App extends Component {
         <Switch>
           <Route exact path="/"
             render={() => (
-              this.state.allData.length 
-              ? <EventGrid data={this.state.allData} />
+              this.state.allData.length ? 
+              <>
+                <Link to="/favorites">See Favorites</Link>
+                <EventGrid data={this.state.allData} addToFavorites={this.addToFavorites}/>
+              </>
               : <Loader />
             )}
           />
           <Route exact path="/favorites"
             render={() => (
-              <h2>Favorites View</h2>
+              <EventGrid data={this.state.favData} addToFavorites={this.addToFavorites} />
             )}
           />
           <Route exact path="/event/:id"
             render={({match}) => (
-              <EventInfo event={this.getCurrentEvent(parseInt(match.params.id))} />
+              <EventInfo addToFavorites={this.addToFavorites} event={this.getCurrentEvent(parseInt(match.params.id))} />
             )}
           />
           <Route 
