@@ -1,5 +1,6 @@
 import React from "react";
 import Event from "../Event/Event";
+import { Link } from "react-router-dom";
 import "./Favorites.css"
 
 export default function Favorites({data, removeFromFavorites, addToFavorites}) {
@@ -13,9 +14,17 @@ export default function Favorites({data, removeFromFavorites, addToFavorites}) {
   })
 
   return (
-    <div className="eventGrid">
-      {favEvents}
-    </div>
+    <>
+      <Link to="/">Back to home</Link>
+      { favEvents.length ?
+        <div className="eventGrid">
+          {favEvents}
+        </div>
+        : <div className="empty-fav-view">
+            <h2>No Favorites, add some!</h2>
+        </div>
+      }
+    </>
   )
 
 }
