@@ -16,15 +16,14 @@ export default function Event({eventData, addToFavorites}) {
   }
   
   return (
-    <Link to={`/event/${eventData.id}`} className="eventLink" >
-      <div className="eventCard">
-        <button className="card-fav-button" onClick={() => {addToFavorites(eventData.id)}}>
-          Favorite</button>
-        <img className="leagueLogo" src={imagePath} />
-        <h2>{eventData.videogame.name}</h2>
-        <h3>{eventData.league.name}</h3>
-        <p>{eventData.name}</p>
+    <div className="eventCard">
+        <button className="card-fav-button" onClick={() => {addToFavorites(eventData.id)}}>Favorite</button>
+        <Link to={`/event/${eventData.id}`} className="eventLink" >
+          <img className="leagueLogo" src={imagePath} />
+          <h2>{eventData.videogame.name}</h2>
+          <h3>{eventData.league.name}</h3>
+          <p>{eventData.name}</p>
+        </Link>
       </div>
-    </Link>
   )
 }
