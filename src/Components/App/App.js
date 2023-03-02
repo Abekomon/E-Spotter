@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
+import Favorites from '../Favorites/Favorites';
 import Loader from '../Loader/Loader';
 import getEventInfo from '../../apiCalls';
 import './App.css';
@@ -27,6 +28,11 @@ class App extends Component {
     }
   }
 
+  removeFromFavorites = (id) => {
+    const filteredData = this.state.favData.filter(eve => eve.id !== id)
+    this.setState({favData: filteredData})
+  }
+
   componentDidMount() {
     getEventInfo('').then(data => {
       console.log(data)
@@ -44,19 +50,30 @@ class App extends Component {
               this.state.allData.length ? 
               <>
                 <Link to="/favorites">See Favorites</Link>
-                <EventGrid data={this.state.allData} addToFavorites={this.addToFavorites}/>
+                <EventGrid 
+                  data={this.state.allData} 
+                  removeFromFavorites={this.removeFromFavorites} 
+                  addToFavorites={this.addToFavorites}
+                />
               </>
               : <Loader />
             )}
           />
           <Route exact path="/favorites"
             render={() => (
-              <EventGrid data={this.state.favData} addToFavorites={this.addToFavorites} />
+              <Favorites 
+                data={this.state.favData} 
+                removeFromFavorites={this.removeFromFavorites} 
+                addToFavorites={this.addToFavorites} 
+              />
             )}
           />
           <Route exact path="/event/:id"
             render={({match}) => (
-              <EventInfo addToFavorites={this.addToFavorites} event={this.getCurrentEvent(parseInt(match.params.id))} />
+              <EventInfo 
+                addToFavorites={this.addToFavorites} 
+                event={this.getCurrentEvent(parseInt(match.params.id))} 
+              />
             )}
           />
           <Route 
