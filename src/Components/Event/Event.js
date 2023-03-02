@@ -1,5 +1,6 @@
 import React from "react";
 import "./Event.css"
+import { Link } from "react-router-dom";
 import csgoLogo from "../../Assets/csgo-logo.svg"
 import valLogo from "../../Assets/val-logo.svg"
 import lolLogo from "../../Assets/lol-logo.svg"
@@ -15,11 +16,13 @@ export default function Event({eventData}) {
   }
   
   return (
-    <div className="eventCard">
-      <img className="leagueLogo" src={imagePath} />
-      <h2>{eventData.videogame.name}</h2>
-      <h3>{eventData.league.name}</h3>
-      <p>{eventData.name}</p>
-    </div>
+    <Link to={`/event/${eventData.id}`} className="eventLink" >
+      <div className="eventCard">
+        <img className="leagueLogo" src={imagePath} />
+        <h2>{eventData.videogame.name}</h2>
+        <h3>{eventData.league.name}</h3>
+        <p>{eventData.name}</p>
+      </div>
+    </Link>
   )
 }

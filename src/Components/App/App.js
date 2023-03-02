@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
-import EventGrid from '../EventGrid/EventGrid';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
+import EventGrid from '../EventGrid/EventGrid';
+import EventInfo from '../EventInfo/EventInfo';
+import Loader from '../Loader/Loader';
 import getEventInfo from '../../apiCalls';
 import './App.css';
 
@@ -10,13 +12,18 @@ class App extends Component {
     super()
     this.state = {
       allData: [],
-      renderData: []
+      favData: []
     }
+  }
+
+  getCurrentEvent = (id) => {
+    return this.state.allData.find(eve => eve.id === id)
   }
 
   componentDidMount() {
     getEventInfo('').then(data => {
-      this.setState({allData: data, renderData: data})
+      console.log(data)
+      this.setState({allData: data})
     })
   }
 
@@ -27,11 +34,26 @@ class App extends Component {
         <Switch>
           <Route exact path="/"
             render={() => (
-              <EventGrid data={this.state.renderData} />
+              this.state.allData.length 
+              ? <EventGrid data={this.state.allData} />
+              : <Loader />
             )}
           />
-            
-          
+          <Route exact path="/favorites"
+            render={() => (
+              <h2>Favorites View</h2>
+            )}
+          />
+          <Route exact path="/event/:id"
+            render={({match}) => (
+              <EventInfo event={this.getCurrentEvent(parseInt(match.params.id))} />
+            )}
+          />
+          <Route 
+            render={() => (
+              <h2>Error View</h2>
+            )}
+          />
         </Switch>
       </>
     )

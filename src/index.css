@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 html, body, #root {
   height: 100%;
   overflow: auto;
