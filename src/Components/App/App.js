@@ -20,6 +20,13 @@ class App extends Component {
     return this.state.allData.find(eve => eve.id === id)
   }
 
+  addToFavorites = (id) => {
+    const findEvent = this.state.allData.find(eve => eve.id === id)
+    if (!this.state.favData.includes(findEvent)){
+      this.setState({favData: [...this.state.favData, findEvent]})
+    }
+  }
+
   componentDidMount() {
     getEventInfo('').then(data => {
       console.log(data)
@@ -46,7 +53,7 @@ class App extends Component {
           />
           <Route exact path="/event/:id"
             render={({match}) => (
-              <EventInfo event={this.getCurrentEvent(parseInt(match.params.id))} />
+              <EventInfo addToFavorites={this.addToFavorites} event={this.getCurrentEvent(parseInt(match.params.id))} />
             )}
           />
           <Route 
