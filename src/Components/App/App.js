@@ -21,7 +21,7 @@ export default class App extends Component {
   }
   
   componentDidMount() {
-    getEventInfo('').then(data => {
+    getEventInfo("").then(data => {
       console.log(data)
       this.setState({allData: data, isLoading: false})
     })
@@ -66,7 +66,7 @@ export default class App extends Component {
                     updateForm={this.updateForm}
                     curValue={this.state.selected} 
                   />
-                  <Link to="/favorites">See Favorites</Link>
+                  <Link className="nav-link" to="/favorites">See Favorites</Link>
                 </nav>
               { this.state.isLoading ? <Loader /> :
                 this.state.allData.length ? 
@@ -74,7 +74,7 @@ export default class App extends Component {
                   data={this.state.allData} 
                   removeFromFavorites={this.removeFromFavorites} 
                   addToFavorites={this.addToFavorites}
-                /> : <h2>No Upcoming Events!</h2>
+                /> : <h2 className="no-event-text">No Upcoming Events!</h2>
                 }
               </>
             )}
