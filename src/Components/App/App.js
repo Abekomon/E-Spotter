@@ -15,6 +15,7 @@ export default class App extends Component {
     this.state = {
       allData: [],
       favData: [],
+      isLoading: true,
       selected: ""
     }
   }
@@ -22,7 +23,7 @@ export default class App extends Component {
   componentDidMount() {
     getEventInfo('').then(data => {
       console.log(data)
-      this.setState({allData: data})
+      this.setState({allData: data, isLoading: false})
     })
   }
   
@@ -43,8 +44,8 @@ export default class App extends Component {
   }
   
   updateEventData = (game) => {
-    this.setState({allData: []})
-    getEventInfo(game).then(data => this.setState({allData: data}))
+    this.setState({allData: [], isLoading: true})
+    getEventInfo(game).then(data => this.setState({allData: data, isLoading: false}))
   }
 
   updateForm = (game) => {
@@ -58,7 +59,6 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/"
             render={() => (
-              this.state.allData.length ? 
               <>
                 <nav className="dashboard-nav">
                   <Form 
@@ -68,13 +68,15 @@ export default class App extends Component {
                   />
                   <Link to="/favorites">See Favorites</Link>
                 </nav>
+              { this.state.isLoading ? <Loader /> :
+                this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
                   removeFromFavorites={this.removeFromFavorites} 
                   addToFavorites={this.addToFavorites}
-                />
+                /> : <h2>No Upcoming Events!</h2>
+                }
               </>
-              : <Loader />
             )}
           />
           <Route exact path="/favorites"
