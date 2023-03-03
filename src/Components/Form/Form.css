@@ -1,4 +1,8 @@
 .select-form {
   height: 85%;
   font-size: 100%;
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 8px;
 }
