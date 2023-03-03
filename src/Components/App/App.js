@@ -14,8 +14,7 @@ export default class App extends Component {
     super()
     this.state = {
       allData: [],
-      favData: [],
-      currentGame: ""
+      favData: []
     }
   }
   
@@ -42,13 +41,9 @@ export default class App extends Component {
     return this.state.allData.find(eve => eve.id === id)
   }
   
-  getUpcomingEvents = () => {
-    this.setState({allData: []})
-    getEventInfo(this.state.currentGame).then(data => this.setState({allData: data}))
-  }
-
   updateEventData = (game) => {
-    this.setState({currentGame: game}, this.getUpcomingEvents) 
+    this.setState({allData: []})
+    getEventInfo(game).then(data => this.setState({allData: data}))
   }
 
   render() {
