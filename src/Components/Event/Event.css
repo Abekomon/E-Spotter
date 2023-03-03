@@ -1,9 +1,9 @@
 .eventCard {
-  width: 31%;
+  width: 30%;
   height: 300px;
   background: lightslategray;
   text-align: center;
-  padding: 2%;
+  padding: 2% 1%;
   position: relative;
 }
 
