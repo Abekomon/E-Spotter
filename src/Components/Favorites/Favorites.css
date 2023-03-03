@@ -1,0 +1,17 @@
+.favorite-text, .no-favorite-text {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.no-favorite-text {
+  margin-top: 10%;
+}
+
+.fav-nav {
+  width: 82%;
+  margin: auto;
+}
+
+.fav-nav a {
+  display: inline-block;
+}
