@@ -14,7 +14,8 @@ export default class App extends Component {
     super()
     this.state = {
       allData: [],
-      favData: []
+      favData: [],
+      selected: ""
     }
   }
   
@@ -46,6 +47,10 @@ export default class App extends Component {
     getEventInfo(game).then(data => this.setState({allData: data}))
   }
 
+  updateForm = (game) => {
+    this.setState({selected: game})
+  }
+
   render() {
     return (
       <>
@@ -55,10 +60,14 @@ export default class App extends Component {
             render={() => (
               this.state.allData.length ? 
               <>
-                <div>
-                  <Form updateEventData={this.updateEventData}/>
+                <nav className="dashboard-nav">
+                  <Form 
+                    updateEventData={this.updateEventData} 
+                    updateForm={this.updateForm}
+                    curValue={this.state.selected} 
+                  />
                   <Link to="/favorites">See Favorites</Link>
-                </div>
+                </nav>
                 <EventGrid 
                   data={this.state.allData} 
                   removeFromFavorites={this.removeFromFavorites} 
