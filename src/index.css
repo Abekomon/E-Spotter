@@ -10,7 +10,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover, select:hover {
   cursor: pointer;
 }
 
