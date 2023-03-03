@@ -7,7 +7,8 @@ import lolLogo from "../../Assets/lol-logo.svg"
 
 function updateButton(id) {
   const curButton = document.querySelector(`.button-${id}`)
-  curButton.classList.add('.disabled')
+  curButton.classList.add('disabled')
+  curButton.setAttribute('disabled', true)
   curButton.innerText = "Added!"
 }
 
