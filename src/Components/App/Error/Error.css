@@ -1,0 +1,13 @@
+.error-box {
+  width: 75%;
+  margin: 10% auto 0;
+  text-align: center;
+}
+
+.error-link:visited {
+  color: white
+}
+
+.error-link:hover {
+  color:red;
+}
