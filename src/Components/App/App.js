@@ -22,7 +22,8 @@ export default class App extends Component {
   }
   
   componentDidMount() {
-    getEventInfo("").then(data => {
+    getEventInfo("")
+    .then(data => {
       console.log(data)
       this.setState({allData: data, isLoading: 'false'})
     }).catch(() => this.setState({isLoading: 'error'}))
@@ -46,7 +47,9 @@ export default class App extends Component {
   
   updateEventData = (game) => {
     this.setState({allData: [], isLoading: 'true'})
-    getEventInfo(game).then(data => this.setState({allData: data, isLoading: 'false'}))
+    getEventInfo(game)
+    .then(data => this.setState({allData: data, isLoading: 'false'}))
+    .catch(() => this.setState({isLoading: 'error'}))
   }
 
   updateForm = (game) => {
@@ -57,10 +60,11 @@ export default class App extends Component {
     return (
       <>
         <Header />
-        {this.state.isLoading === 'error' ? <Redirect to="/error" /> :
+        
         <Switch>
           <Route exact path="/"
             render={() => (
+              this.state.isLoading === 'error' ? <Redirect to="/error" /> :
               <>
                 <nav className="dashboard-nav">
                   <Form 
@@ -92,6 +96,7 @@ export default class App extends Component {
           />
           <Route exact path="/event/:id"
             render={({match}) => (
+              this.state.isLoading === 'error' ? <Redirect to="/error" /> :
               <EventInfo 
                 addToFavorites={this.addToFavorites} 
                 event={this.getCurrentEvent(parseInt(match.params.id))} 
@@ -103,7 +108,16 @@ export default class App extends Component {
               <Error />
             )}
           />
-        </Switch>}
+          <Route 
+            render={() => (
+              <div className="404-box">
+                <h2>Huh, we can't seem to find that.</h2> 
+                <Link className="nav-link" to="/">&lt; Back to home</Link>
+              </div>
+            )} 
+          />
+
+        </Switch>
       </>
     )
   }
