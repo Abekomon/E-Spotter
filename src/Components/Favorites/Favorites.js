@@ -16,7 +16,7 @@ export default function Favorites({data, removeFromFavorites, addToFavorites}) {
   return (
     <>
       <nav className="fav-nav">
-        <Link className="nav-link" to="/">Back to home</Link>
+        <Link className="nav-link" to="/">&lt; Back to home</Link>
       </nav>
       { favEvents.length ?
         <>
