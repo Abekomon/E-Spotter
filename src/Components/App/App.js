@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
 import Favorites from '../Favorites/Favorites';
 import Loader from '../Loader/Loader';
+import Error from './Error/Error';
 import getEventInfo from '../../apiCalls';
 import './App.css';
 
@@ -15,16 +16,17 @@ export default class App extends Component {
     this.state = {
       allData: [],
       favData: [],
-      isLoading: true,
+      isLoading: 'true',
       selected: ""
     }
   }
   
   componentDidMount() {
-    getEventInfo("").then(data => {
+    getEventInfo("")
+    .then(data => {
       console.log(data)
-      this.setState({allData: data, isLoading: false})
-    })
+      this.setState({allData: data, isLoading: 'false'})
+    }).catch(() => this.setState({isLoading: 'error'}))
   }
   
   addToFavorites = (id) => {
@@ -44,8 +46,10 @@ export default class App extends Component {
   }
   
   updateEventData = (game) => {
-    this.setState({allData: [], isLoading: true})
-    getEventInfo(game).then(data => this.setState({allData: data, isLoading: false}))
+    this.setState({allData: [], isLoading: 'true'})
+    getEventInfo(game)
+    .then(data => this.setState({allData: data, isLoading: 'false'}))
+    .catch(() => this.setState({isLoading: 'error'}))
   }
 
   updateForm = (game) => {
@@ -59,6 +63,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/"
             render={() => (
+              this.state.isLoading === 'error' ? <Redirect to="/error" /> :
               <>
                 <nav className="dashboard-nav">
                   <Form 
@@ -68,7 +73,7 @@ export default class App extends Component {
                   />
                   <Link className="nav-link" to="/favorites">See Favorites</Link>
                 </nav>
-              { this.state.isLoading ? <Loader /> :
+              { this.state.isLoading === 'true' ? <Loader /> :
                 this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
@@ -90,17 +95,27 @@ export default class App extends Component {
           />
           <Route exact path="/event/:id"
             render={({match}) => (
+              this.state.isLoading === 'error' ? <Redirect to="/error" /> :
               <EventInfo 
                 addToFavorites={this.addToFavorites} 
                 event={this.getCurrentEvent(parseInt(match.params.id))} 
               />
             )}
           />
-          <Route 
+          <Route exact path="/error" 
             render={() => (
-              <h2>Error View</h2>
+              <Error />
             )}
           />
+          <Route 
+            render={() => (
+              <div className="error-box">
+                <h2>Huh, we can't seem to find that.</h2> 
+                <Link className="error-link" to="/">&lt; Back to home</Link>
+              </div>
+            )} 
+          />
+
         </Switch>
       </>
     )
