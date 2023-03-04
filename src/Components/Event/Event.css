@@ -5,9 +5,6 @@
   background: slategray;
   text-align: center;
   padding: 2% 1%;
-  border-radius: 10px;
-  border: 1px solid rgb(188, 188, 188);
-  box-shadow: 0 1px 10px 2px rgb(188, 188, 188);
 }
 
 .eventLink, .eventLink:visited {
