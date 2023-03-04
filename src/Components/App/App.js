@@ -60,7 +60,6 @@ export default class App extends Component {
     return (
       <>
         <Header />
-        
         <Switch>
           <Route exact path="/"
             render={() => (
@@ -110,9 +109,9 @@ export default class App extends Component {
           />
           <Route 
             render={() => (
-              <div className="404-box">
+              <div className="error-box">
                 <h2>Huh, we can't seem to find that.</h2> 
-                <Link className="nav-link" to="/">&lt; Back to home</Link>
+                <Link className="error-link" to="/">&lt; Back to home</Link>
               </div>
             )} 
           />
