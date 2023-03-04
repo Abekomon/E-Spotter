@@ -23,12 +23,12 @@ export default function Event({eventData, addToFavorites, removeFromFavorites}) 
   }
   
   return (
-    <div className="eventCard">
+    <div className="eventCard shadow">
         <Link to={`/event/${eventData.id}`} className="eventLink" >
           <img className="leagueLogo" src={imagePath} alt={`${eventData.league.name} logo`} />
-          <h2>{eventData.videogame.name}</h2>
-          <h3>{eventData.league.name}</h3>
-          <p>{eventData.name}</p>
+          <h2>{eventData.league.name}</h2>
+          <h3>{eventData.serie.name}</h3>
+          <p>{eventData.videogame.name}</p>
         </Link>
         { 
           document.URL.includes('favorites') ?
