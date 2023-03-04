@@ -41,7 +41,7 @@ export default function EventInfo({addToFavorites, event}) {
       </header>
       <div className="infoBox">
         <img className="info-img" src={imagePath} alt={`${event.league.name} logo`} />
-        <h2>{`${event.league.name} - ${event.serie.full_name}`}</h2>
+        <h2>{`${event.videogame.name} - ${event.league.name} - ${event.serie.full_name}`}</h2>
         <h3>{event.name}</h3>
         <h4>Start Time:</h4><p className="info">{event.begin_at}</p>
         <h4>Teams Playing:</h4><p className="info">{teamNames.length ? teamNames : 'Unknown'}</p>
