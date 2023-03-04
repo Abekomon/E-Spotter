@@ -3,7 +3,7 @@
   color: black;
   width: 75%;
   margin: 5% auto 0;
-  padding: 2%;
+  padding: 2% 2% 4%;
   border-radius: 10px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .infoBox {
-  padding-left: 3%;
+  padding: 0 3%;
 }
 
 .info-home-link, .info-home-link:visited {
@@ -33,10 +33,31 @@
 
 .info {
   width: 95%;
-  margin: auto;
+  margin:  0 auto;
 }
 
 .info-img {
   float: right;
   max-height: 150px;
+  max-width: 40%;
+}
+
+@media screen and (max-width: 1000px) {
+  .infoContainer {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .info-img {
+    float: none;
+    max-width: 55%;
+    align-self: center;
+    margin-top: 5%;
+  }
+
+  .infoBox {
+    display: flex;
+    flex-direction: column;
+  }
 }
