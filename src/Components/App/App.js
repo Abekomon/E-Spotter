@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
 import Favorites from '../Favorites/Favorites';
 import Loader from '../Loader/Loader';
+import Error from './Error/Error';
 import getEventInfo from '../../apiCalls';
 import './App.css';
 
@@ -15,7 +16,7 @@ export default class App extends Component {
     this.state = {
       allData: [],
       favData: [],
-      isLoading: true,
+      isLoading: 'true',
       selected: ""
     }
   }
@@ -23,8 +24,8 @@ export default class App extends Component {
   componentDidMount() {
     getEventInfo("").then(data => {
       console.log(data)
-      this.setState({allData: data, isLoading: false})
-    })
+      this.setState({allData: data, isLoading: 'false'})
+    }).catch(() => this.setState({isLoading: 'error'}))
   }
   
   addToFavorites = (id) => {
@@ -44,8 +45,8 @@ export default class App extends Component {
   }
   
   updateEventData = (game) => {
-    this.setState({allData: [], isLoading: true})
-    getEventInfo(game).then(data => this.setState({allData: data, isLoading: false}))
+    this.setState({allData: [], isLoading: 'true'})
+    getEventInfo(game).then(data => this.setState({allData: data, isLoading: 'false'}))
   }
 
   updateForm = (game) => {
@@ -56,6 +57,7 @@ export default class App extends Component {
     return (
       <>
         <Header />
+        {this.state.isLoading === 'error' ? <Redirect to="/error" /> :
         <Switch>
           <Route exact path="/"
             render={() => (
@@ -68,7 +70,7 @@ export default class App extends Component {
                   />
                   <Link className="nav-link" to="/favorites">See Favorites</Link>
                 </nav>
-              { this.state.isLoading ? <Loader /> :
+              { this.state.isLoading === 'true' ? <Loader /> :
                 this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
@@ -96,12 +98,12 @@ export default class App extends Component {
               />
             )}
           />
-          <Route 
+          <Route exact path="/error" 
             render={() => (
-              <h2>Error View</h2>
+              <Error />
             )}
           />
-        </Switch>
+        </Switch>}
       </>
     )
   }
