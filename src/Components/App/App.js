@@ -14,14 +14,16 @@ export default class App extends Component {
     super()
     this.state = {
       allData: [],
-      favData: []
+      favData: [],
+      isLoading: true,
+      selected: ""
     }
   }
   
   componentDidMount() {
-    getEventInfo('').then(data => {
+    getEventInfo("").then(data => {
       console.log(data)
-      this.setState({allData: data})
+      this.setState({allData: data, isLoading: false})
     })
   }
   
@@ -42,8 +44,12 @@ export default class App extends Component {
   }
   
   updateEventData = (game) => {
-    this.setState({allData: []})
-    getEventInfo(game).then(data => this.setState({allData: data}))
+    this.setState({allData: [], isLoading: true})
+    getEventInfo(game).then(data => this.setState({allData: data, isLoading: false}))
+  }
+
+  updateForm = (game) => {
+    this.setState({selected: game})
   }
 
   render() {
@@ -53,19 +59,24 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/"
             render={() => (
-              this.state.allData.length ? 
               <>
-                <div>
-                  <Form updateEventData={this.updateEventData}/>
-                  <Link to="/favorites">See Favorites</Link>
-                </div>
+                <nav className="dashboard-nav">
+                  <Form 
+                    updateEventData={this.updateEventData} 
+                    updateForm={this.updateForm}
+                    curValue={this.state.selected} 
+                  />
+                  <Link className="nav-link" to="/favorites">See Favorites</Link>
+                </nav>
+              { this.state.isLoading ? <Loader /> :
+                this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
                   removeFromFavorites={this.removeFromFavorites} 
                   addToFavorites={this.addToFavorites}
-                />
+                /> : <h2 className="no-event-text">No Upcoming Events!</h2>
+                }
               </>
-              : <Loader />
             )}
           />
           <Route exact path="/favorites"

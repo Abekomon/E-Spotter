@@ -1,16 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./EventInfo.css"
 
 function updateText() {
-  document.querySelector('.info-fav-button').innerText = "Added to Favorites!"
+  const curButton = document.querySelector('.info-fav-button')
+  curButton.innerText = "Added!"
+  curButton.classList.add('disabled')
+
 } 
 
 export default function EventInfo({addToFavorites, event}) {
+  if(!event) {
+    console.log("success!")
+    return (<Redirect to="/error" />)
+  }
+  
+  const teamNames = event.teams.map(team => team.name).join(",  ")
+  
   return (
-    <div className="infoContainer">
+    <div className="infoContainer shadow">
       <header className="infoHeader">
-        <Link className="info-home-link" to="/">Back to home</Link>
+        <Link className="info-home-link" to="/">&lt; Back to home</Link>
         <button onClick={() => {
             updateText()
             addToFavorites(event.id)
@@ -18,9 +28,12 @@ export default function EventInfo({addToFavorites, event}) {
           className="info-fav-button">Add to Favorites</button>
       </header>
       <div className="infoBox">
-        <h2>{event.serie.full_name}</h2>
-        <h3>{event.videogame.name}</h3>
-        <p>{event.begin_at}</p>
+        <img className="info-img" src={event.league.image_url} alt={`${event.league.name} logo`} />
+        <h2>{`${event.league.name} - ${event.serie.full_name}`}</h2>
+        <h3>{event.name}</h3>
+        <h4>Start Time:</h4><p className="info">{event.begin_at}</p>
+        <h4>Teams Playing:</h4><p className="info">{teamNames.length ? teamNames : 'Unknown'}</p>
+        <h4>Total Matches:</h4><p className="info">{event.matches.length ? event.matches.length : `Unknown`}</p>
       </div>
     </div>
   )

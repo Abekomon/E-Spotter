@@ -1,13 +1,21 @@
 .infoContainer {
-  background-color: lightsteelblue;
+  background-color: slategray;
+  color: black;
   width: 75%;
-  margin: auto;
+  margin: 5% auto 0;
   padding: 2%;
+  border-radius: 10px;
 }
 
 .infoHeader {
   display: flex;
   justify-content: space-between;
+}
+
+.info-fav-button {
+  background: transparent;
+  border: none;
+  font-size: 1em;
 }
 
 .infoBox {
@@ -16,8 +24,19 @@
 
 .info-home-link, .info-home-link:visited {
   color: black;
+  font-size: 1em;
 }
 
-.info-home-link:hover {
-  color: red;
+.info-home-link:hover, .info-fav-button:hover {
+  color: beige;
+}
+
+.info {
+  width: 95%;
+  margin: auto;
+}
+
+.info-img {
+  float: right;
+  max-height: 150px;
 }

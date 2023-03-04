@@ -7,7 +7,8 @@ import lolLogo from "../../Assets/lol-logo.svg"
 
 function updateButton(id) {
   const curButton = document.querySelector(`.button-${id}`)
-  curButton.classList.add('.disabled')
+  curButton.setAttribute('disabled', true)
+  curButton.classList.add('disabled')
   curButton.innerText = "Added!"
 }
 
@@ -22,12 +23,12 @@ export default function Event({eventData, addToFavorites, removeFromFavorites}) 
   }
   
   return (
-    <div className="eventCard">
+    <div className="eventCard shadow">
         <Link to={`/event/${eventData.id}`} className="eventLink" >
-          <img className="leagueLogo" src={imagePath} />
-          <h2>{eventData.videogame.name}</h2>
-          <h3>{eventData.league.name}</h3>
-          <p>{eventData.name}</p>
+          <img className="leagueLogo" src={imagePath} alt={`${eventData.league.name} logo`} />
+          <h2>{eventData.league.name}</h2>
+          <h3>{eventData.serie.name}</h3>
+          <p>{eventData.videogame.name}</p>
         </Link>
         { 
           document.URL.includes('favorites') ?

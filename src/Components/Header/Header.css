@@ -1,9 +1,9 @@
 h1 {
   text-align: center;
   width: 20%;
-  margin: 3% auto;
+  margin: 2.5% auto 1%;
 }
 
 .logo-home-link:visited {
-  color: black;
+  color: white;
 }

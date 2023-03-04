@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 * {
+  font-family: 'Space Grotesk', sans-serif;
   box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+  background-color: rgb(42, 42, 42);
+  color: white;
 }
 
 a {
@@ -7,18 +18,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover, select:hover {
   cursor: pointer;
 }
 
-html, body, #root {
-  height: 100%;
-  overflow: auto;
-}
-
-body {
-  margin: 0;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
