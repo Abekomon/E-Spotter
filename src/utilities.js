@@ -1,3 +1,5 @@
+const dayjs = require('dayjs')
+
 export default function dataCleaner(event) {
   const teamNames = event.teams.map(team => team.name).join(",  ")
   const data = {
@@ -9,7 +11,7 @@ export default function dataCleaner(event) {
     league_name: event.league.name,
     series_name: event.serie.name,
     series_full: event.serie.full_name,
-    start_time: event.begin_at,
+    start_time: dayjs(event.begin_at).format('dddd, MMM DD @ h A (EST)'),
     num_matches: event.matches.length,
   }
   return data
