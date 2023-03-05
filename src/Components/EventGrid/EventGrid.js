@@ -1,5 +1,6 @@
 import React from "react";
 import Event from "../Event/Event";
+import PropTypes from 'prop-types'
 import "./EventGrid.css"
 
 export default function EventGrid({data, addToFavorites}) {
@@ -20,4 +21,9 @@ export default function EventGrid({data, addToFavorites}) {
       {events}
     </div>
   )
+}
+
+EventGrid.propTypes = {
+  data: PropTypes.array, 
+  addToFavorites: PropTypes.func
 }
