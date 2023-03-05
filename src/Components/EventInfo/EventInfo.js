@@ -10,7 +10,6 @@ function updateText() {
   const curButton = document.querySelector('.info-fav-button')
   curButton.innerText = "Added!"
   curButton.classList.add('disabled')
-
 } 
 
 export default function EventInfo({addToFavorites, event}) {

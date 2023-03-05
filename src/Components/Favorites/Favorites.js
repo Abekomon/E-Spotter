@@ -23,14 +23,15 @@ export default function Favorites({data, removeFromFavorites, addToFavorites}) {
       <nav className="fav-nav">
         <Link className="nav-link" to="/">&lt; Back to home</Link>
       </nav>
-      { favEvents.length ?
+      { 
+        favEvents.length ?
         <>
           <h2 className="favorite-text">Favorited Events</h2>
           <div className="eventGrid">
             {favEvents}
           </div>
-        </>
-        : <div className="empty-fav-view">
+        </> : 
+        <div className="empty-fav-view">
             <h2 className="no-favorite-text">No Favorites, add some!</h2>
         </div>
       }

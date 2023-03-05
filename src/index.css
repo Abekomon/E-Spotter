@@ -21,9 +21,3 @@ a {
 a:hover, button:hover, select:hover {
   cursor: pointer;
 }
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}

@@ -30,16 +30,15 @@ export default function Event({id, logo, game_name, league_name, series_name, ad
           <h3>{series_name}</h3>
           <p>{game_name}</p>
         </Link>
-        { 
-          document.URL.includes('favorites') ?
+        {document.URL.includes('favorites') ?
           <button className={`card-fav-button button-${id}`} onClick={() => {removeFromFavorites(id)}}>Remove</button> :
           <button 
             className={`card-fav-button button-${id}`} 
             onClick={() => {
               addToFavorites(id)
               updateButton(id)
-            }}>Favorite</button>
-        }
+            }}>Favorite
+          </button>}
       </div>
   )
 }

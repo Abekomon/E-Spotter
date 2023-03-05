@@ -77,12 +77,12 @@ export default class App extends Component {
                   />
                   <Link className="nav-link" to="/favorites">See Favorites</Link>
                 </nav>
-              { this.state.isLoading === 'true' ? <Loader /> :
+              {this.state.isLoading === 'true' ? <Loader /> :
                 this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
                   addToFavorites={this.addToFavorites}
-                /> : <h2 className="no-event-text">No Upcoming Events!</h2> }
+                /> : <h2 className="no-event-text">No Upcoming Events!</h2>}
               </>
             )}
           />
@@ -117,7 +117,6 @@ export default class App extends Component {
               </div>
             )} 
           />
-
         </Switch>
       </>
     )

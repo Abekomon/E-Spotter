@@ -12,7 +12,8 @@ export default function Form({updateEventData, updateForm, curValue}) {
     <select 
       className="select-form"
       value={curValue}
-      onChange={(e) => handleChange(e)}>
+      onChange={(e) => handleChange(e)}
+    >
       <option value="disabled" disabled>Filter by game</option>
       <option value="">All</option>
       <option value="/rl">Rocket League</option>
