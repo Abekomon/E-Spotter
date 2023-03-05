@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import "./Form.css"
 
 export default function Form({updateEventData, updateForm, curValue}) {
@@ -28,4 +29,10 @@ export default function Form({updateEventData, updateForm, curValue}) {
       <option value="/starcraft-brood-war">Starcraft: Brood War</option>
     </select>
   )
+}
+
+Form.propTypes = {
+  updateEventData: PropTypes.func, 
+  updateForm: PropTypes.func, 
+  curValue: PropTypes.string
 }
