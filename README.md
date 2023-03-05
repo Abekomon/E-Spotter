@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contributors
+ [![Max][Max-badge]][Max-url]
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+  <a href="https://github.com/abekomon/E-Spotter">
+    <h1 align="center">E-Spotter</h1>
+  </a>
 
-### `npm start`
+<h3 align="center"></h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <p align="center">
+    Esports Event Finder App 
+    <br />
+    <a href="https://github.com/Abekomon/E-Spotter"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Abekomon/E-Spotter/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Abekomon/E-Spotter/issues">Request Feature</a>
+  </p>
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
 
-### `npm test`
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[label](../../../E-Spotter%20-%20Showcase.mp4)
 
-### `npm run build`
+For this solo project, I created an app that allows users to maintain an up-to-date timeline of when their favorite E-Sports games are having events! The user can choose from a variety of the most popular games, as well as viewing the start time, match quantity, which teams are playing, and much more! The user can also favorite an event to be stored on a separate view (as well as remove an event from this view) at any time.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built With
+- [![React][React]][react-url] 
+- [![Cypress]][Cypress-url]
+- [![Javascript][javascript.js]][javascript-url]
+- [![CSS][css]][css-url]
+- [![HTML][html]][html-url]
+- [![Webpack][webpack]][webpack-url]
+- [![Day.js][dayjs]][dayjs-url]
+- [![API][api]][api-url]
+- [![Git][git]][git-url]
+- [![GitHub][github]][github-url]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Visit the Deployed page at this link: [Deployed Page](https://google.com)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-- OR --
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Fork the Repo from the [Repository](https://github.com/Abekomon/E-spotter)
+2. Clone the repo
+   ```sh
+   git@github.com:Abekomon/E-Spotter.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Run npm start
+   ```sh
+   npm start
+   ```
+5. Use the Link that is given in the Terminal & Open in Browser
+   ```sh
+   Example: http://localhost:3000/
+   ```
+6. Once finished, close using control + c
 
-## Learn More
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+See the [open issues](https://github.com/Abekomon/E-Spotter/issues).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Max-badge]: https://img.shields.io/badge/-Max%20Lange-green
+[Max-url]: https://github.com/Abekomon
+[React]: https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge
+[react-url]: https://reactjs.org/
+[Cypress]: https://img.shields.io/badge/CYPRESS-000000?style=for-the-badge&logo=cypress&logoColor=purple
+[Cypress-url]: https://www.cypress.io/
+[webpack]: https://img.shields.io/badge/Webpack-563D7C?style=for-the-badge&logo=webpack&logoColor=white
+[webpack-url]: https://webpack.js.org/
+[dayjs]: https://img.shields.io/badge/-dayjs-fb6052?style=for-the-badge
+[dayjs-url]: https://www.npmjs.com/package/dayjs
+[css]: https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=css&logoColor=white
+[css-url]: https://www.w3.org/Style/CSS/Overview.en.html
+[html]: https://img.shields.io/badge/HTML-4A4A55?style=for-the-badge&logo=HTML&logoColor=FF3E00
+[html-url]: https://www.w3schools.com/howto/howto_make_a_website.asp
+[javascript.js]: https://img.shields.io/badge/JavaScript-0769AD?style=for-the-badge&logo=javascript&logoColor=white
+[javascript-url]: https://www.javascript.com/
+[api]: https://img.shields.io/badge/API-15EA75?style=for-the-badge&logo=HTML&logoColor=FF3E00
+[api-url]: https://www.w3schools.com/js/js_api_intro.asp
+[github]: https://img.shields.io/badge/GitHub-22043C?style=for-the-badge&logo=github&logoColor=FF3E00
+[github-url]: https://github.com/
+[git]: https://img.shields.io/badge/Git-2E0305?style=for-the-badge&logo=git&logoColor=FF3E00
+[git-url]: https://git-scm.com/
