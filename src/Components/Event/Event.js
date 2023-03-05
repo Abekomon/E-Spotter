@@ -1,5 +1,6 @@
 import React from "react";
 import "./Event.css"
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 import csgoLogo from "../../Assets/csgo-logo.svg"
 import valLogo from "../../Assets/val-logo.svg"
@@ -12,34 +13,42 @@ function updateButton(id) {
   curButton.innerText = "Added!"
 }
 
-export default function Event({eventData, addToFavorites, removeFromFavorites}) {
-  let imagePath = eventData.league.image_url
-  if(eventData.videogame.name === "Valorant" && !imagePath) {
-    imagePath = valLogo
-  } else if (eventData.videogame.name === "CS:GO" && !imagePath) {
-    imagePath = csgoLogo
-  } else if (eventData.videogame.name === "LoL" && !imagePath) {
-    imagePath = lolLogo
+export default function Event({id, logo, game_name, league_name, series_name, addToFavorites, removeFromFavorites}) {
+  if(game_name === "Valorant" && !logo) {
+    logo = valLogo
+  } else if (game_name === "CS:GO" && !logo) {
+    logo = csgoLogo
+  } else if (game_name === "LoL" && !logo) {
+    logo = lolLogo
   }
   
   return (
     <div className="eventCard shadow">
-        <Link to={`/event/${eventData.id}`} className="eventLink" >
-          <img className="leagueLogo" src={imagePath} alt={`${eventData.league.name} logo`} />
-          <h2>{eventData.league.name}</h2>
-          <h3>{eventData.serie.name}</h3>
-          <p>{eventData.videogame.name}</p>
+        <Link to={`/event/${id}`} className="eventLink" >
+          <img className="leagueLogo" src={logo} alt={`${league_name} logo`} />
+          <h2>{league_name}</h2>
+          <h3>{series_name}</h3>
+          <p>{game_name}</p>
         </Link>
-        { 
-          document.URL.includes('favorites') ?
-          <button className={`card-fav-button button-${eventData.id}`} onClick={() => {removeFromFavorites(eventData.id)}}>Remove</button> :
+        {document.URL.includes('favorites') ?
+          <button className={`card-fav-button button-${id}`} onClick={() => {removeFromFavorites(id)}}>Remove</button> :
           <button 
-            className={`card-fav-button button-${eventData.id}`} 
+            className={`card-fav-button button-${id}`} 
             onClick={() => {
-              addToFavorites(eventData.id)
-              updateButton(eventData.id)
-            }}>Favorite</button>
-        }
+              addToFavorites(id)
+              updateButton(id)
+            }}>Favorite
+          </button>}
       </div>
   )
+}
+
+Event.propTypes = {
+  id: PropTypes.number, 
+  logo: PropTypes.string, 
+  game_name: PropTypes.string, 
+  league_name: PropTypes.string, 
+  series_name: PropTypes.string, 
+  addToFavorites: PropTypes.func, 
+  removeFromFavorites: PropTypes.func
 }

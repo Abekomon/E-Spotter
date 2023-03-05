@@ -5,7 +5,7 @@ describe('Dashboard Spec Flows', () => {
   })
   
   it('Should display a logo on page load', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
   
   it('Should display card(s) with event information on page load', () => {

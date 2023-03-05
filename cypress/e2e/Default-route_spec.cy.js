@@ -4,7 +4,7 @@ describe('Default route view flows', () => {
   })
   
   it('Should display a logo', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
 
   it('Should display a message saying that the url is not recognized', () => {

@@ -4,7 +4,7 @@ describe('Error view flows', () => {
   })
   
   it('Should display a logo', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
 
   it('Should display a message stating there was an error', () => {

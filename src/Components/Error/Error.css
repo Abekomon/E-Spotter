@@ -4,11 +4,8 @@
   text-align: center;
 }
 
-.error-link {
+.error-link, .error-link:visited {
   display: inline-block;
-}
-
-.error-link:visited {
   color: white
 }
 

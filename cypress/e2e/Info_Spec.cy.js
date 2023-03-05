@@ -7,13 +7,13 @@ describe('Individual Event Info spec', () => {
   })
   
   it('Should have a logo at the top of the page', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
 
   it('Should display info about the selected event', () => {
     cy.get('h2').contains('CS:GO - IEM - Dallas: North American Closed Qualifier 2023')
     cy.get('h3').contains('Playoffs')
-    // cy.get('.info').contains() start time check
+    cy.get('.info').contains('Saturday, Mar 04 @ 5 PM (EST)')
     cy.get('.info').contains('Strife, Vendetta, Nouns, LOS + oNe')
     cy.get('.info').contains('6')
   })

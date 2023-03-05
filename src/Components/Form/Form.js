@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import "./Form.css"
 
 export default function Form({updateEventData, updateForm, curValue}) {
@@ -11,7 +12,8 @@ export default function Form({updateEventData, updateForm, curValue}) {
     <select 
       className="select-form"
       value={curValue}
-      onChange={(e) => handleChange(e)}>
+      onChange={(e) => handleChange(e)}
+    >
       <option value="disabled" disabled>Filter by game</option>
       <option value="">All</option>
       <option value="/rl">Rocket League</option>
@@ -28,4 +30,10 @@ export default function Form({updateEventData, updateForm, curValue}) {
       <option value="/starcraft-brood-war">Starcraft: Brood War</option>
     </select>
   )
+}
+
+Form.propTypes = {
+  updateEventData: PropTypes.func, 
+  updateForm: PropTypes.func, 
+  curValue: PropTypes.string
 }
