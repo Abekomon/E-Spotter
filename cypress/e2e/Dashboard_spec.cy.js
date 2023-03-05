@@ -17,6 +17,10 @@ describe('Dashboard Spec Flows', () => {
     cy.get('.eventCard').contains('Dallas: North American Closed Qualifier')
     cy.get('.eventCard').contains('CS:GO')
   })
+
+  it('Should display a logo for each event', () => {
+    cy.get('.leagueLogo').should('be.visible')
+  })
   
   it('Should display a dropdown menu that defaults to All on page load', () => {
     cy.get('.select-form').contains('All')
