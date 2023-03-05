@@ -6,4 +6,21 @@ h1 {
 .logo-home-link, .logo-home-link:visited {
   display: inline-block;
   color: white;
+  background: url(../../Assets/o.png) no-repeat;
+  background-size: 21px 21px;
+  background-position: 69.5px 13px;
+}
+
+@keyframes logo {
+  from {
+    background-position: 69.5px 17px;
+  }
+  to {
+    background-position: 69.5px 13px;
+  }
+}
+
+.logo-home-link:hover {
+  background-image: url(../../../public/favicon.ico);
+  animation: logo 0.25s linear;
 }
