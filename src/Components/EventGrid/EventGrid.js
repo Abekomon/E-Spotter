@@ -6,7 +6,11 @@ export default function EventGrid({data, addToFavorites}) {
   const events = data.map(event => {
     return <Event 
       key={event.id}
-      eventData={event}
+      id={event.id}
+      logo={event.logo}
+      game_name={event.game_name}
+      league_name={event.league_name}
+      series_name={event.series_name}
       addToFavorites={addToFavorites}
     />
   })
