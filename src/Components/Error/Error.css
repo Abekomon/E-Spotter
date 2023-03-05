@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.error-link {
+  display: inline-block;
+}
+
 .error-link:visited {
   color: white
 }
