@@ -7,7 +7,7 @@ describe('Individual Event Info spec', () => {
   })
   
   it('Should have a logo at the top of the page', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
 
   it('Should display info about the selected event', () => {

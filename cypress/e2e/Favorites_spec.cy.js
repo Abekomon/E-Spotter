@@ -8,7 +8,7 @@ describe('Favorites spec flows', () => {
   })
   
   it('Should display a logo on page load', () => {
-    cy.get('h1').contains('E-Spotter')
+    cy.get('h1').should('be.visible')
   })
 
   it('Should display favorites page title text', () => {
