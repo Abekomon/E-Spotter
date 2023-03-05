@@ -1,5 +1,6 @@
 import React from "react";
 import "./Event.css"
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 import csgoLogo from "../../Assets/csgo-logo.svg"
 import valLogo from "../../Assets/val-logo.svg"
@@ -41,4 +42,14 @@ export default function Event({id, logo, game_name, league_name, series_name, ad
         }
       </div>
   )
+}
+
+Event.propTypes = {
+  id: PropTypes.number, 
+  logo: PropTypes.string, 
+  game_name: PropTypes.string, 
+  league_name: PropTypes.string, 
+  series_name: PropTypes.string, 
+  addToFavorites: PropTypes.func, 
+  removeFromFavorites: PropTypes.func
 }
