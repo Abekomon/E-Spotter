@@ -43,7 +43,7 @@
 
 ## About The Project
 
-[label](../../../E-Spotter%20-%20Showcase.mp4)
+https://user-images.githubusercontent.com/113847222/222986161-bdd0edd0-3bc9-4b14-80cf-ce6c772c7401.mp4
 
 For this solo project, I created an app that allows users to maintain an up-to-date timeline of when their favorite E-Sports games are having events! The user can choose from a variety of the most popular games, as well as viewing the start time, match quantity, which teams are playing, and much more! The user can also favorite an event to be stored on a separate view (as well as remove an event from this view) at any time.
 
