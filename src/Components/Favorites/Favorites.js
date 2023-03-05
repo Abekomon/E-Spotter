@@ -1,5 +1,6 @@
 import React from "react";
 import Event from "../Event/Event";
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 import "./Favorites.css"
 
@@ -7,7 +8,11 @@ export default function Favorites({data, removeFromFavorites, addToFavorites}) {
   const favEvents = data.map(event => {
     return <Event 
       key={event.id}
-      eventData={event}
+      id={event.id}
+      logo={event.logo}
+      game_name={event.game_name}
+      league_name={event.league_name}
+      series_name={event.series_name}
       removeFromFavorites={removeFromFavorites}
       addToFavorites={addToFavorites}
     />
@@ -31,5 +36,10 @@ export default function Favorites({data, removeFromFavorites, addToFavorites}) {
       }
     </>
   )
+}
 
+Favorites.propTypes = {
+  data: PropTypes.array,
+  removeFromFavorites: PropTypes.func,
+  addToFavorites: PropTypes.func
 }
