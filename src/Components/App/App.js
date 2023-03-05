@@ -8,6 +8,7 @@ import Favorites from '../Favorites/Favorites';
 import Loader from '../Loader/Loader';
 import Error from '../Error/Error';
 import getEventInfo from '../../apiCalls';
+import dataCleaner from '../../utilities';
 import './App.css';
 
 export default class App extends Component {
@@ -24,8 +25,8 @@ export default class App extends Component {
   componentDidMount() {
     getEventInfo("")
     .then(data => {
-      console.log(data)
-      this.setState({allData: data, isLoading: 'false'})
+      const cleanedData = data.map(event => {return dataCleaner(event)})
+      this.setState({allData: cleanedData, isLoading: 'false'})
     }).catch(() => this.setState({isLoading: 'error'}))
   }
   
@@ -48,7 +49,10 @@ export default class App extends Component {
   updateEventData = (game) => {
     this.setState({allData: [], isLoading: 'true'})
     getEventInfo(game)
-    .then(data => this.setState({allData: data, isLoading: 'false'}))
+    .then(data => {
+      const cleanedData = data.map(event => {return dataCleaner(event)})
+      this.setState({allData: cleanedData, isLoading: 'false'})
+    })
     .catch(() => this.setState({isLoading: 'error'}))
   }
 
@@ -77,10 +81,8 @@ export default class App extends Component {
                 this.state.allData.length ? 
                 <EventGrid 
                   data={this.state.allData} 
-                  removeFromFavorites={this.removeFromFavorites} 
                   addToFavorites={this.addToFavorites}
-                /> : <h2 className="no-event-text">No Upcoming Events!</h2>
-                }
+                /> : <h2 className="no-event-text">No Upcoming Events!</h2> }
               </>
             )}
           />
