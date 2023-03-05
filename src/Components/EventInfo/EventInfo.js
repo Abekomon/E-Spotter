@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import PropTypes from 'prop-types'
 import "./EventInfo.css"
 import csgoLogo from "../../Assets/csgo-logo.svg"
 import valLogo from "../../Assets/val-logo.svg"
@@ -46,4 +47,9 @@ export default function EventInfo({addToFavorites, event}) {
       </div>
     </div>
   )
+}
+
+EventInfo.propTypes = {
+  addToFavorites: PropTypes.func, 
+  event: PropTypes.object
 }
