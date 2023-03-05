@@ -6,7 +6,7 @@ import EventGrid from '../EventGrid/EventGrid';
 import EventInfo from '../EventInfo/EventInfo';
 import Favorites from '../Favorites/Favorites';
 import Loader from '../Loader/Loader';
-import Error from './Error/Error';
+import Error from '../Error/Error';
 import getEventInfo from '../../apiCalls';
 import './App.css';
 

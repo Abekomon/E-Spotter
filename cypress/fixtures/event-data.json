@@ -1,0 +1,43 @@
+[
+  {
+    "begin_at": "2023-03-04T22:30:00Z",
+    "end_at": null,
+    "has_bracket": true,
+    "id": 10109,
+    "league": {
+      "id": 4161,
+      "image_url": null,
+      "modified_at": "2019-03-04T11:00:40Z",
+      "name": "IEM",
+      "slug": "cs-go-iem",
+      "url": null
+    },
+    "league_id": 4161,
+    "live_supported": false,
+    "matches": [1, 2, 3, 4, 5, 6],
+    "modified_at": "2023-03-04T14:49:05Z",
+    "name": "Playoffs",
+    "prizepool": null,
+    "serie": {
+      "begin_at": "2023-03-04T22:30:00Z", 
+      "end_at": null, 
+      "full_name": "Dallas: North American Closed Qualifier 2023", 
+      "id": 5706, 
+      "league_id": 4161, 
+      "modified_at": "2023-03-04T14:49:05Z",
+      "name": "Dallas: North American Closed Qualifier",
+      "season": null,
+      "slug": "cs-go-iem-dallas-north-american-closed-qualifier-2023",
+     " winner_id": null,
+      "winner_type": null,
+      "year": 2023
+    },
+    "serie_id": 5706,
+    "slug": "cs-go-iem-dallas-north-american-closed-qualifier-2023-playoffs",
+    "teams": [{"name": "Strife"}, {"name": "Vendetta"}, {"name": "Nouns"}, {"name": "LOS + oNe"}],
+    "tier": "c",
+    "videogame": {"id": 3, "name": "CS:GO", "slug": "cs-go"},
+    "winner_id": null,
+    "winner_type": "Team"
+  }
+]

@@ -1,0 +1,34 @@
+[  
+  {
+    "begin_at":"2023-03-05T17:00:00Z",
+    "end_at":null,
+    "has_bracket":true,
+    "id":10104,
+    "league": {
+      "id":4947,
+      "image_url":null,
+      "modified_at":"2023-01-01T17:19:50Z",
+      "name":"VCL",
+      "slug":"valorant-vcl",
+      "url":null
+    },
+    "league_id":4947,
+    "live_supported":false,
+    "matches": [
+      {"begin_at":"2023-03-05T17:00:00Z","detailed_stats":true,"draw":false,"end_at":null,"forfeit":false,"game_advantage":null,"id":739435,"live":{"opens_at":null,"supported":false,"url":null},"match_type":"best_of","modified_at":"2023-03-04T21:20:20Z","name":"Upper bracket final: DS vs HMB","number_of_games":5,"original_scheduled_at":"2023-03-05T17:00:00Z","rescheduled":false,"scheduled_at":"2023-03-05T17:00:00Z","slug":"dsyre-vs-hmble-2023-03-05","status":"not_started","streams_list":[{"embed_url":"https://player.twitch.tv/?channel=valleague_it","language":"it","main":true,"official":true,"raw_url":"https://www.twitch.tv/valleague_it"}],"tournament_id":10104,"winner_id":null,"winner_type":"Team"},{"begin_at":"2023-03-06T17:00:00Z","detailed_stats":true,"draw":false,"end_at":null,"forfeit":false,"game_advantage":null,"id":739434,"live":{"opens_at":null,"supported":false,"url":null},"match_type":"best_of","modified_at":"2023-03-04T08:08:05Z","name":"Lower bracket semifinal: GMT vs MACKO","number_of_games":5,"original_scheduled_at":"2023-03-06T17:00:00Z","rescheduled":false,"scheduled_at":"2023-03-06T17:00:00Z","slug":"gmt-esports-vs-macko-esports-2023-03-06","status":"not_started","streams_list":[{"embed_url":"https://player.twitch.tv/?channel=valleague_it","language":"it","main":true,"official":true,"raw_url":"https://www.twitch.tv/valleague_it"}],"tournament_id":10104,"winner_id":null,"winner_type":"Team"},{"begin_at":"2023-03-07T17:00:00Z","detailed_stats":true,"draw":false,"end_at":null,"forfeit":false,"game_advantage":null,"id":739436,"live":{"opens_at":null,"supported":false,"url":null},"match_type":"best_of","modified_at":"2023-03-04T08:08:54Z","name":"Lower bracket final: TBD vs TBD","number_of_games":5,"original_scheduled_at":"2023-03-07T17:00:00Z","rescheduled":false,"scheduled_at":"2023-03-07T17:00:00Z","slug":"2023-03-07-ce91e389-47f6-4c3c-98d9-d8f778dc8d2c","status":"not_started","streams_list":[{"embed_url":"https://player.twitch.tv/?channel=valleague_it","language":"it","main":true,"official":true,"raw_url":"https://www.twitch.tv/valleague_it"}],"tournament_id":10104,"winner_id":null,"winner_type":"Team"},{"begin_at":"2023-03-12T17:00:00Z","detailed_stats":true,"draw":false,"end_at":null,"forfeit":false,"game_advantage":null,"id":739437,"live":{"opens_at":null,"supported":false,"url":null},"match_type":"best_of","modified_at":"2023-03-04T08:09:12Z","name":"Grand final: TBD vs TBD","number_of_games":5,"original_scheduled_at":"2023-03-12T17:00:00Z","rescheduled":false,"scheduled_at":"2023-03-12T17:00:00Z","slug":"2023-03-12-8dea44c9-2665-4675-8695-269b1217d515","status":"not_started","streams_list":[{"embed_url":"https://player.twitch.tv/?channel=valleague_it","language":"it","main":true,"official":true,"raw_url":"https://www.twitch.tv/valleague_it"}],"tournament_id":10104,"winner_id":null,"winner_type":"Team"}
+    ],
+    "modified_at":"2023-03-04T08:55:35Z",
+    "name":"Playoffs",
+    "prizepool":"14000 Euro",
+    "serie": {
+      "begin_at":"2023-01-21T18:00:00Z","end_at":null,"full_name":"Italy: Rinascimento Split 1 2023","id":5552,"league_id":4947,"modified_at":"2023-01-21T01:18:23Z","name":"Italy: Rinascimento Split 1","season":null,"slug":"valorant-vcl-italy-rinascimento-split-1-2023","winner_id":null,"winner_type":null,"year":2023
+    },
+    "serie_id":5552,
+    "slug":"valorant-vcl-italy-rinascimento-split-1-2023-playoffs",
+    "teams":[{"acronym":"GMT","id":128584,"image_url":"https://cdn.pandascore.co/images/team/image/128584/699px_gmt_esports_2022_allmode.png","location":"AZ","modified_at":"2023-03-04T08:55:33Z","name":"GMT Esports","slug":"gmt-esports"},{"acronym":"MACKO","id":129807,"image_url":"https://cdn.pandascore.co/images/team/image/129807/51px_macko_esports.png","location":"IT","modified_at":"2023-03-04T08:55:34Z","name":"Macko Esports","slug":"macko-esports-valorant"},{"acronym":"DS","id":130399,"image_url":"https://cdn.pandascore.co/images/team/image/130399/600px_dsyre_2022_lightmode.png","location":"IT","modified_at":"2023-03-04T08:55:34Z","name":"Dsyre","slug":"dsyre"},{"acronym":"HMB","id":132666,"image_url":"https://cdn.pandascore.co/images/team/image/132666/263px_hmble_lightmode.png","location":"IT","modified_at":"2023-03-04T08:55:35Z","name":"HMBLE","slug":"hmble-valorant"}],
+    "tier":"d",
+    "videogame":{"id":26,"name":"Valorant","slug":"valorant"},
+    "winner_id":null,
+    "winner_type":"Team"
+  }
+]
