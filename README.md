@@ -5,11 +5,8 @@
 
 <br />
 
-  <a href="https://github.com/abekomon/E-Spotter">
-    <h1 align="center">E-Spotter</h1>
-  </a>
-
-<h3 align="center"></h3>
+<h1 align="center">E-Spotter</h1>
+<h3 align="center"><a href="https://e--spotter.herokuapp.com/">Visit the deployed page</a></h3>
 
   <p align="center">
     Esports Event Finder App 
@@ -47,6 +44,10 @@ https://user-images.githubusercontent.com/113847222/222986161-bdd0edd0-3bc9-4b14
 
 For this solo project, I created an app that allows users to maintain an up-to-date timeline of when their favorite E-Sports games are having events! The user can choose from a variety of the most popular games, as well as viewing the start time, match quantity, which teams are playing, and much more! The user can also favorite an event to be stored on a separate view (as well as remove an event from this view) at any time.
 
+I also created a simple express server to combat the CORS errors I was getting when I attempted to deploy, you can visit that repo [here](https://github.com/Abekomon/E-Spotter-Express-Server)
+</br>
+</br>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -65,7 +66,7 @@ For this solo project, I created an app that allows users to maintain an up-to-d
 
 ## Getting Started
 
-Visit the Deployed page at this link: [Deployed Page](https://google.com)
+Visit the Deployed page at this link: [Deployed Page](https://e--spotter.herokuapp.com/)
 
 -- OR --
 
